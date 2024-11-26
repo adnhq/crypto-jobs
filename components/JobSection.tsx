@@ -12,6 +12,7 @@ import { getJobListings } from "@/lib/actions";
 
 async function JobsSection() {
   const jobs = (await getJobListings()) || [];
+  // console.log(jobs);
 
   return (
     <div

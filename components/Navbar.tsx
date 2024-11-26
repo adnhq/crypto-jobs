@@ -43,11 +43,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ease-in-out ${
-        scrolled
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ease-in-out ${scrolled
           ? "bg-background/80 backdrop-blur-md shadow-md"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -104,6 +103,19 @@ export default function Navbar() {
                 <Link href="/post-job">Post a Job</Link>
               </Button>
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: menuItems.length * 0.1 }}
+            >
+              <div className="flex items-center space-x-4">
+                <Button asChild variant="outline">
+                  <Link href="/signup">Signup</Link>
+                </Button>
+              </div>
+            </motion.div>
+
 
             <motion.div
               initial={{ opacity: 0, y: -20 }}
